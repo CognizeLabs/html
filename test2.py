@@ -1,15 +1,6 @@
 import csv
 import re
-
-# Placeholder function to simulate processing and return required fields
-def process_email(subject: str, body: str):
-    # Simulate processing logic
-    return {
-        "caseCategory": "General Inquiry",  # Example category
-        "caseUrgency": "Low",  # Example urgency
-        "sentiment": "Neutral",  # Example sentiment
-        "confidence": 0.85  # Example confidence score
-    }
+from intent_classifier import process_email  # Import the function from intent_classifier.py
 
 # Function to clean the email content
 def clean_text(text: str) -> str:
@@ -31,12 +22,14 @@ def process_csv(input_file: str, output_file: str):
         writer.writeheader()
 
         for row in reader:
-            # Combine and clean email subject and body
+            # Clean and combine email subject and body
             subject = clean_text(row['emailContentSubject'])
             body = clean_text(row['emailContentBody'])
-            combined_content = f"Subject: {subject} Body: {body}"
+            
+            # Format the email content with "Details" on a new line
+            combined_content = f"Subject: {subject}\nDetails: {body}"
 
-            # Process the email content to get caseCategory, caseUrgency, sentiment, and confidence
+            # Call the process_email function from intent_classifier.py
             processed_data = process_email(subject, body)
 
             # Update the row with new data
