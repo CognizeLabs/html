@@ -1,4 +1,5 @@
 import csv
+import re
 
 # Placeholder function to simulate processing and return required fields
 def process_email(subject: str, body: str):
@@ -9,6 +10,14 @@ def process_email(subject: str, body: str):
         "sentiment": "Neutral",  # Example sentiment
         "confidence": 0.85  # Example confidence score
     }
+
+# Function to clean the email content
+def clean_text(text: str) -> str:
+    # Remove \r\n, \n\n, and other repeated newlines
+    text = re.sub(r'[\r\n]+', ' ', text)
+    # Replace any other multiple spaces with a single space
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
 
 # Read the CSV file, process the data, and write to a new CSV
 def process_csv(input_file: str, output_file: str):
@@ -22,9 +31,9 @@ def process_csv(input_file: str, output_file: str):
         writer.writeheader()
 
         for row in reader:
-            # Combine email subject and body, clean new line characters
-            subject = row['emailContentSubject'].strip().replace('\r', '').replace('\n', '')
-            body = row['emailContentBody'].strip().replace('\r', '').replace('\n', '')
+            # Combine and clean email subject and body
+            subject = clean_text(row['emailContentSubject'])
+            body = clean_text(row['emailContentBody'])
             combined_content = f"Subject: {subject} Body: {body}"
 
             # Process the email content to get caseCategory, caseUrgency, sentiment, and confidence
