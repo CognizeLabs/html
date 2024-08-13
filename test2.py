@@ -23,9 +23,9 @@ def process_csv(input_file: str, output_file: str):
 
         for row in reader:
             # Combine email subject and body, clean new line characters
-            subject = row['emailContentSubject'].strip().replace('\n', ' ').replace('\r', '')
-            body = row['emailContentBody'].strip().replace('\n', ' ').replace('\r', '')
-            combined_content = f"Subject: {subject}\nBody: {body}"
+            subject = row['emailContentSubject'].strip().replace('\r', '').replace('\n', '')
+            body = row['emailContentBody'].strip().replace('\r', '').replace('\n', '')
+            combined_content = f"Subject: {subject} Body: {body}"
 
             # Process the email content to get caseCategory, caseUrgency, sentiment, and confidence
             processed_data = process_email(subject, body)
