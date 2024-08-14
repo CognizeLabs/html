@@ -1,0 +1,49 @@
+Professional Summary
+An accomplished IT Architect with 20 years of experience specializing in machine learning, generative application development, and AI research. Currently serving as a Senior TLCP Engineer, I am committed to advancing technological innovation and operational efficiency within my organization. I possess a robust background in architecture design, IT solutions, and strategic development, driving initiatives that have significantly improved organizational productivity and reduced costs. My work includes pioneering new frameworks, developing secure and reusable software libraries, and contributing thought leadership through technical blogging and public contributions.
+
+Career Highlights
+ENI Architect
+Company Name | [Year] – Present
+
+BNE Portal, SAMx, Data Externalization, EVA: Delivered technical solutions and designed application architecture for key enterprise projects, driving their success and operational efficiency.
+Eligibility Verification System: Led the design of a system that digitized manual PDF uploads and integrated seamlessly with the broker community, streamlining form submissions and improving case evaluations, resulting in a $20 million annual savings.
+Magnus AI Platform: Spearheaded the development of an AI platform to expedite generative application development, incorporating security, authentication, and integration capabilities for enterprise-wide use.
+Innovative Solutions and Contributions
+
+Virus Scanning Service: Developed a reusable API-based file scanning service using open-source engines, enhancing security by mitigating malware threats.
+Generative Application Libraries: Created libraries to prevent prompt injection and redact sensitive data, ensuring privacy and security in healthcare applications.
+E&IPrivacyGuard: Developed a reusable software library to redact and anonymize PHI and PII data using regular expressions and a pre-trained ML model for auto-detection of sensitive data.
+RAG Module: Created a Retrieval-Augmented Generation module for document retrieval in generative AI applications, enhancing data access and processing.
+Leadership in AI Research and Development
+
+Email Automation Project: Directed a team developing an email automation solution that classifies customer support emails, identifies intent, extracts details, and processes backend transactions. The project is currently in pilot production and pending legal approval.
+Open Source Exploration: Championed the adoption of open-source technologies and frameworks, leading to reduced operational costs and enhanced organizational efficiency.
+Patents and Intellectual Property
+UHC "Know My Voice" Patent Application
+
+Submitted a patent application for the "Know My Voice" concept, leveraging voice recognition technology for user authentication and authorization via devices like Alexa, Google Home, and Siri. The key module ensures secure voice print registration using phrase recognition, safeguarding against recording-based spoofing.
+Platform Design
+B2B Marketplace Platform
+
+Designed a B2B marketplace platform, currently under development, to facilitate secure and streamlined partner collaboration with UHG APIs. The platform emphasizes efficient partner onboarding, secure API integration using SHA-256 public/private key management, and supports a developer community with comprehensive documentation and SDKs.
+Technical Thought Leadership
+Technical Blogging and Public Contributions: Active contributor to Medium and GitHub, sharing insights on reusable components and generative application development.
+Architecture Review Board: Regularly conducts solution architecture review board calls, collaborating with teams across the organization, including Cirrus, Nimbus, and other business units.
+Awards and Recognition
+"Make it Happen" IT Award: Received the prestigious award twice, recognizing exceptional contributions and impactful results in IT projects.
+Educational Background
+Master of Computer Science
+University Name
+Master of Business Administration (MBA)
+University Name
+Focus: Machine Learning and Blockchain Technologies
+
+Leadership and Team Management
+Team Leadership: Leads a team of 20 resources, fostering a culture of innovation and excellence in automation and machine learning.
+Strategic Vision: Committed to driving technological advancements that improve organizational efficiency and productivity, while exploring cutting-edge frameworks and technologies.
+Skills
+Architecture Design & IT Solutions: Enterprise-level architecture design, technical solutions, and strategic IT planning.
+Machine Learning & AI Development: Specialization in generative AI, machine learning models, and AI research.
+Voice Recognition & Security: Expertise in voice authentication systems, data security, and privacy solutions.
+API & Platform Development: Development of secure APIs, B2B platforms, and reusable software libraries.
+Technical Leadership: Leadership in technical teams, open-source advocacy, and architecture review boards.
