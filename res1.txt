@@ -9,13 +9,15 @@ BNE Portal, SAMx, Data Externalization: Delivered technical solutions and applic
 Eligibility Verification System: Led the design of a system that digitized manual PDF uploads and seamlessly integrated with the broker community, streamlining form submissions and expediting case evaluations. This initiative improved operational efficiency, saving the organization approximately $20 million annually.
 Innovative Solutions and Contributions
 
+Email Automation Project: Directed a team developing an email automation solution that classifies customer support emails, identifies intent, extracts details, and processes backend transactions. The project, which is already in production, is expected to save approximately $7 million annually based on conservative projections. Legal approval has been obtained, and the project is delivering significant efficiency improvements.
 Virus Scanning Service: Developed a reusable service for the organization, utilizing open-source engines for API-based file scanning, enhancing security by eliminating potential malware threats.
 Generative Application Libraries: Created libraries to prevent prompt injection and to redact sensitive data, ensuring privacy and security in healthcare applications.
 Magnus AI Platform: Spearheaded the development of a platform to expedite generative application development, supporting RAG, knowledge graph, and autonomous agents. The platform incorporates security, authentication, and seamless integration capabilities for enterprise-wide use.
 Developer Frameworks: Developed frameworks to streamline development processes, providing reusable components and guidelines to enhance efficiency and consistency in application development across the organization.
+UHG Know My Voice: Submitted a patent concept for a voice-based authentication and authorization system. The idea, "UHG Know My Voice," utilizes machine learning to analyze digital voice prints, creating unique user identities for enhanced security and authentication.
+B2B Marketplace Platform: Designed and developed a B2B marketplace platform for API management, facilitating seamless integration with external partners. This platform aims to enhance partner onboarding efficiency, secure API integration, and foster developer community growth.
 Leadership in AI Research and Development
 
-Email Automation Project: Directed a team developing an email automation solution that classifies customer support emails, identifies intent, extracts details, and processes backend transactions. The project, which is already in production, is expected to save approximately $7 million annually based on conservative projections. Legal approval has been obtained, and the project is delivering significant efficiency improvements.
 Open Source Exploration: Advocated for the adoption of open-source technologies and frameworks to reduce operational costs and enhance efficiency across the organization.
 Technical Thought Leadership
 
@@ -34,3 +36,4 @@ Focus: Machine Learning and Blockchain Technologies
 Leadership and Team Management
 Team Leadership: Manages a team of 20 resources, fostering a culture of innovation and excellence in automation and machine learning.
 Strategic Vision: As a leader, I am committed to driving technological advancements that improve organizational efficiency and productivity, while exploring cutting-edge frameworks and technologies.
+
