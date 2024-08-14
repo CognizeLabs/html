@@ -1,0 +1,36 @@
+Professional Profile: Genoj Mathew
+Summary
+An accomplished IT architect with 20 years of experience, specializing in machine learning and generative application development. Currently a Senior TLCP Engineer on the technology leadership career path, I am dedicated to advancing technological innovation and operational efficiency within my organization. As a member of the TLCP community, I leverage my expertise in architecture design, IT solutions, and AI research to contribute to the strategic growth and success of the enterprise.
+
+Career Highlights
+ENI Lead Architect (4 Years)
+
+BNE Portal, SAMx, Data Externalization: Delivered technical solutions and application design architecture, contributing to the development and success of key projects.
+Eligibility Verification System: Led the design of a system that digitized manual PDF uploads and seamlessly integrated with the broker community, streamlining form submissions and expediting case evaluations. This initiative improved operational efficiency, saving the organization approximately $20 million annually.
+Innovative Solutions and Contributions
+
+Virus Scanning Service: Developed a reusable service for the organization, utilizing open-source engines for API-based file scanning, enhancing security by eliminating potential malware threats.
+Generative Application Libraries: Created libraries to prevent prompt injection and to redact sensitive data, ensuring privacy and security in healthcare applications.
+Magnus AI Platform: Spearheaded the development of a platform to expedite generative application development, supporting RAG, knowledge graph, and autonomous agents. The platform incorporates security, authentication, and seamless integration capabilities for enterprise-wide use.
+Developer Frameworks: Developed frameworks to streamline development processes, providing reusable components and guidelines to enhance efficiency and consistency in application development across the organization.
+Leadership in AI Research and Development
+
+Email Automation Project: Directed a team developing an email automation solution that classifies customer support emails, identifies intent, extracts details, and processes backend transactions. The project, which is already in production, is expected to save approximately $7 million annually based on conservative projections. Legal approval has been obtained, and the project is delivering significant efficiency improvements.
+Open Source Exploration: Advocated for the adoption of open-source technologies and frameworks to reduce operational costs and enhance efficiency across the organization.
+Technical Thought Leadership
+
+Technical Blogging and Public Contributions: Active contributor to Medium and GitHub, sharing insights on reusable components and generative application development.
+Architecture Review Board: Conducts solution architecture review board calls, collaborating with teams across the organization, including Cirrus, Nimbus, and business units.
+Pioneering New Frameworks
+
+Guidelines and Templates Development: Developed templates and guidelines for developers, particularly focusing on open-source frameworks to expedite application development.
+Awards and Recognition
+
+"Make it Happen" IT Award: Honored with the prestigious "Make it Happen" IT award twice within the organization, recognizing exceptional contributions and impactful results in IT projects.
+Educational Background
+Master of Computer Science
+Master of Business Administration (MBA)
+Focus: Machine Learning and Blockchain Technologies
+Leadership and Team Management
+Team Leadership: Manages a team of 20 resources, fostering a culture of innovation and excellence in automation and machine learning.
+Strategic Vision: As a leader, I am committed to driving technological advancements that improve organizational efficiency and productivity, while exploring cutting-edge frameworks and technologies.
