@@ -262,3 +262,16 @@ By maintaining a strategic, resourceful, and forward-thinking approach to my wor
 
 
 
+QQQ
+Sustained technical contributions - Describe your behavior and outcomes that demonstrates your influence.provide as many examples as you like to tell your story.
+
+Thought Leadership - Describe your behavior and outcomes that demonstrates your strategic thinking.provide as many examples as you like to tell your story.
+
+Contributing to intellectual property - Describe your behavior and outcomes that demonstrates your contribution to innovation through reusable assets, open source, patent etc. provide as many examples as you like to tell your story.
+
+sharing what you know - Describe your behavior and outcomes that demonstrates your activity in publications, internal events,extrenal events, mentoring. provide as many examples as you like to tell your story.
+
+promoting our engineering culture - Describe your behavior and outcomes that contributed to advancement of TLCP community. provide as many examples as you like to tell your story.
+
+other information - share any other information that you believe would be interest to reviewers
+
