@@ -1,0 +1,1 @@
+See docker-compose.yml to run registry and example agents.

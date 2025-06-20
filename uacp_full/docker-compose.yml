@@ -1,0 +1,21 @@
+
+version: "3.8"
+services:
+  registry:
+    build: ./agent_registry
+    ports:
+      - "8080:8000"
+  membership:
+    build: ./examples/membership_agent
+    environment:
+      REGISTRY_URL: "http://registry:8000"
+    depends_on: [registry]
+    ports:
+      - "8001:8001"
+  scheduler:
+    build: ./examples/scheduler_agent
+    environment:
+      REGISTRY_URL: "http://registry:8000"
+    depends_on: [registry]
+    ports:
+      - "8002:8002"
