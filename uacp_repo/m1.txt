@@ -1,0 +1,21 @@
+sequenceDiagram
+    autonumber
+    participant CI          as Dev - SDK
+    participant Vault       as Key Vault
+    participant EAR         as Enterprise Agent Registry
+    participant Gateway     as U-ACP Gateway
+    participant AgentA      as MembershipAgent  (SDK)
+    participant AgentB      as BrokerCompAgent (SDK)
+
+    %% On-boarding
+    CI ->> Vault: create RSA keypair
+    Vault -->> CI: private.pem + JWKS
+    CI ->> EAR: POST /onboard {manifest, jwks_uri}
+    EAR -->> CI: 200 OK
+
+    %% Runtime call
+    AgentA ->> Gateway: JSON-RPC (JWT, nonce, scope=tool:get_comp_statement)
+    Gateway ->> Gateway: verify sig • scope • nonce • allow-list
+    Gateway ->> AgentB: forward
+    AgentB -->> Gateway: response (JWT)
+    Gateway -->> AgentA: relay
