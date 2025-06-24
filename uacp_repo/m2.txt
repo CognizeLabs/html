@@ -1,0 +1,59 @@
+flowchart LR
+  %% ───── Browser layer ─────
+  subgraph Browser
+    direction TB
+    A["ChatShell<br/>React host"]
+    B["MFE-A<br/>Member Enroll"]
+    C["MFE-B<br/>Broker Commissions"]
+    LB["@lingo/bridge SDK"]
+
+    A -->|"Module Federation / iframe"| B
+    A -->|"Module Federation / iframe"| C
+    B --> LB
+    C --> LB
+  end
+
+  %% ───── Front-end bus ─────
+  subgraph FrontEndBus
+    FE["EventBus<br/>(postMessage ➜ WS)"]
+  end
+  LB --> FE
+  FE -->|WSS| GW["Event-Gateway"]
+
+  %% ───── Backend cluster ─────
+  subgraph Cluster / VPC
+    direction TB
+    GW --> K["Kafka / NATS"]
+    LG["LangGraph<br/>UiEventRouter"] --> API["Core APIs"]
+    K --> LG
+  end
+
+
+
+
+
+/////
+
+sequenceDiagram
+    participant U   as User
+    participant MFE as Enrollment MFE / (React iframe)
+    participant LB  as lingo/bridge SDK
+    participant CS  as ChatShell Bus
+    participant GW  as Event-Gateway
+    participant K   as Kafka topic ui.events
+    participant LG  as LangGraph UiEventRouter
+    participant API as Enrollment API
+
+    U  ->> MFE: Click **Submit Enrollment**
+    MFE->> LB : emit CloudEvent
+    LB  --) CS : postMessage
+    CS  ->> GW : WebSocket send
+    GW  ->> K  : produce record
+    LG -->> K  : consume
+    LG  ->> API: createMember()
+    API-->> LG : 201 Created
+    LG  ->> CS : enqueue bot reply<br/>“Form received—send ID card?”
+    CS  --) U  : Bot message appears
+
+
+////
