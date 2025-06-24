@@ -1,3 +1,5 @@
+sdk agents
+-----------
 sequenceDiagram
     autonumber
     participant CI          as Dev - SDK
@@ -19,3 +21,48 @@ sequenceDiagram
     Gateway ->> AgentB: forward
     AgentB -->> Gateway: response (JWT)
     Gateway -->> AgentA: relay
+
+
+non sdk
+------
+sequenceDiagram
+    autonumber
+    participant Proxy    as Internal U-ACP Proxy
+    participant Legacy   as Non-SDK Agent
+    participant EAR      as Registry
+    participant Gateway  as U-ACP Gateway
+    participant Caller   as MembershipAgent (SDK)
+
+    %% Proxy on-boarding
+    Proxy ->> EAR: POST /onboard {manifest, JWKS}
+
+    %% Runtime
+    Caller ->> Gateway: U-ACP request
+    Gateway ->> Proxy: forward (verified)
+    Proxy ->> Legacy: REST /internalCall
+    Legacy -->> Proxy: 200 OK
+    Proxy -->> Gateway: U-ACP response
+    Gateway -->> Caller: relay
+
+
+
+vendor
+-----
+sequenceDiagram
+    autonumber
+    participant VendorProxy  as "Vendor U-ACP Proxy\n(on-boards like any agent)"
+    participant VendorSvc    as "Partner’s Existing Service"
+    participant Gateway      as "U-ACP Gateway"
+    participant Caller       as "MembershipAgent (SDK)"
+    participant EAR          as "Registry"
+
+    %% On-board once
+    VendorProxy ->> EAR: POST /onboard {manifest, JWKS}
+
+    %% Live traffic
+    Caller ->> Gateway: signed JSON-RPC
+    Gateway ->> VendorProxy: forward
+    VendorProxy ->> VendorSvc: REST /whatever
+    VendorSvc -->> VendorProxy: 200 OK
+    VendorProxy -->> Gateway: signed response
+    Gateway -->> Caller: relay
