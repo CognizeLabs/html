@@ -1,0 +1,88 @@
+flowchart TD
+%% ────────── 1. IDENTITY & ACCESS ──────────
+  subgraph IA["Identity & Access"]
+    direction TB
+    User["Human / Agent<br/>Request"]
+    IdP["One Healthcare ID<br/>(OIDC + MFA)"]
+    Token["OAuth2 Bearer Token<br/>(client-credential)"]
+    User -->| OIDCAuth | IdP
+    IdP  -->| JWT | Token
+    Token --> API_GW
+  end
+
+%% ────────── 2. POLICY & CAPABILITY ─────────
+  subgraph PC["Policy & Capability"]
+    API_GW["API Gateway<br/>(WAF + Rate Limit)"]
+    RBAC["RBAC Engine"]
+    ABAC["ABAC Evaluator<br/>(role, entity, attr)"]
+    CapReg["Capability Registry<br/>(config-driven)"]
+    API_GW --> RBAC
+    RBAC --> ABAC
+    ABAC --> CapReg
+  end
+
+%% ────────── 3. ENTERPRISE RED-TEAMING ──────
+  subgraph RT["🚨 Enterprise Red-Teaming SaaS"]
+    RedTeam["Firewall<br/>Prompt-Injection & Adversarial Checks"]
+  end
+  CapReg --> RedTeam
+
+%% ────────── 4. AI GUARDRAILS ───────────────
+  subgraph AG["AI Guardrails"]
+    LLM["LLM<br/>Temp ≤ 0.3 · Top-p ≈ 0.85"]
+    Compliance["Compliance Agent<br/>Outbound PII/PHI"]
+    Judge["LLM Judge<br/>Accuracy ≥ 0.85"]
+    RedTeam --> LLM
+    LLM --> Compliance
+    Compliance --> Judge
+  end
+
+%% ────────── 5. UNIFIED AGENT COMMS ─────────
+  UACP["MCP / A2A Bus<br/>Secure Agent-to-Agent Messaging"]
+  Judge --> UACP
+
+%% ────────── 6. DATA PROTECTION ─────────────
+  subgraph DP["Data Protection"]
+    MongoDB["MongoDB / pgvector<br/>AES-256 at rest"]
+    Vault["HashiCorp Vault<br/>Ephemeral Secrets"]
+    KMS["AWS KMS<br/>Key Rotation"]
+    Compliance --> MongoDB
+    Vault --> LLM
+    KMS --> Vault
+  end
+
+%% ────────── 7. OBSERVABILITY & IR ──────────
+  subgraph OB["Observability & IR"]
+    OTel["OpenTelemetry<br/>Trace · Span · User"]
+    Dynatrace["Dynatrace & Loki<br/>Real-time Analytics"]
+    Judge --> OTel
+    OTel --> Dynatrace
+  end
+
+%% ────────── CLASS STYLES ───────────────────
+  classDef identity fill:#1E90FF,stroke:#003366,color:#fff
+  classDef policy   fill:#4CAF50,stroke:#1B5E20,color:#fff
+  classDef ai       fill:#FF6347,stroke:#7F0000,color:#fff
+  classDef data     fill:#FFD700,stroke:#B8860B,color:#000
+  classDef observ   fill:#BA55D3,stroke:#4B0082,color:#fff
+  classDef comms    fill:#9370DB,stroke:#4B0082,color:#fff
+
+  class User,IdP,Token identity
+  class API_GW,RBAC,ABAC,CapReg policy
+  class RedTeam,LLM,Compliance,Judge ai
+  class MongoDB,Vault,KMS data
+  class OTel,Dynatrace observ
+  class UACP comms
+
+
+
+🚨 Enterprise Red Teaming Security‑as‑a‑Service: reusable firewall against prompt injection, hallucination & adversarial inputs (integrated by Lingo)
+Zero‑Trust Authentication: One Healthcare ID (OIDC + MFA) + OAuth2 client‑credential bearer tokens for service‑to‑service calls
+Role‑Based Authorization: User profile (type, roles, entities, permissions) drives ABAC
+Config‑Driven Capabilities: Unsupported intents (e.g., Membership Termination) politely rejected
+Internal Ops Role Tiers: View‑only, Update, Admin scopes enforced per entity
+Generative‑AI Guardrails: Compliance Agent & LLM Judge (accuracy ≥ 0.85)
+Deterministic LLM Tuning: Temperature ≤ 0.3, p‑value ≥ 0.85 for consistent answers
+Data Protection: TLS 1.3, AES‑256 at rest, Vault‑injected secrets, immutable audit logs
+Continuous Assurance: Dynatrace telemetry, monthly red‑team, semi‑annual pen‑tests
+Unified Agent Communication: MCP/A2A protocol secures agent‑to‑agent messaging & tool discovery
