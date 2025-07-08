@@ -86,3 +86,21 @@ Deterministic LLM Tuning: Temperature ≤ 0.3, p‑value ≥ 0.85 for consistent
 Data Protection: TLS 1.3, AES‑256 at rest, Vault‑injected secrets, immutable audit logs
 Continuous Assurance: Dynatrace telemetry, monthly red‑team, semi‑annual pen‑tests
 Unified Agent Communication: MCP/A2A protocol secures agent‑to‑agent messaging & tool discovery
+
+
+
+
+Slide Title – AI as the New Normal: Lingo AI Strategy & Protocol (2025)
+
+What We’re Doing	Why It Matters
+1 Strategic Investment	• Multi-year funding for Lingo AI platform, infra and R&D	Ensures capacity to scale Gen-AI securely and meet regulated-data needs
+2 Operating Model	• Central platform team + embedded R&D pods
+• Unified agent registry with ABAC/OIDC guard-rails	Gives every product team reusable services and consistent governance
+3 AI-Driven Innovation	• 25–30 % of 2025 roadmap re-imagined via Lingo Agents & Portal
+• 187 product designs YTD (↑ 10.5 %) and 5× more UX studies across 6 projects	Transforms complex workflows into conversational experiences; faster design-to-delivery
+4 Cross-Enterprise Enablement	• New feedback-panel tool; +1,464 panelists (896 Employers, 173 Brokers, 18 Internal, 377 Unknown)
+• 3 internal panels; AI-mentor boot camps	Aligns AI solutions with user pain-points and spreads know-how across teams
+5 Speed-to-Delivery Enablers	• Piloted Figma AI “Make & Rewrite” + Locofy integration
+• +10 hrs/month design capacity; Dynatrace-powered LingoScope observability	Shorter copy & code cycles; real-time insight into latency, tokens, accuracy
+6 Strategic Partnerships & Thought Leadership	• 6 new partnerships (CPO, E&I, Provider D&A, Sales)
+• Monthly SIG VoC read-outs, Broker Experience Score co-dev, NPS tracking	Embeds AI patterns enterprise-wide and links them to measurable CX uplift
