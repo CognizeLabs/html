@@ -104,3 +104,19 @@ What We’re Doing	Why It Matters
 • +10 hrs/month design capacity; Dynatrace-powered LingoScope observability	Shorter copy & code cycles; real-time insight into latency, tokens, accuracy
 6 Strategic Partnerships & Thought Leadership	• 6 new partnerships (CPO, E&I, Provider D&A, Sales)
 • Monthly SIG VoC read-outs, Broker Experience Score co-dev, NPS tracking	Embeds AI patterns enterprise-wide and links them to measurable CX uplift
+
+
+
+Good morning. This slide shows how Lingo AI makes Gen-AI the new normal for our business.
+
+On the left is our Strategic Investment—multi-year funding for the Lingo AI platform, GPUs, vector databases, and a dedicated R&D team. That gives us the secure, compliant capacity we need for regulated healthcare data.
+
+Moving right, our Operating Model combines a central platform team with embedded R&D pods. A unified agent registry and ABAC/OIDC guard-rails let every product squad reuse services while staying inside governance lines.
+
+Next, AI-Driven Innovation: we’re re-imagining roughly 30 percent of the 2025 roadmap through conversational agents—everything from Knowledge lookup to Plan Recommendation—supported by 187 new UX designs and a five-fold jump in user-insight studies.
+
+Cross-Enterprise Enablement is about culture: a new panel tool added 1,464 panelists and three internal panels, while our AI-mentor boot camps spread skills across teams.
+
+To deliver faster, Speed-to-Delivery Enablers like Figma AI “Make & Rewrite,” Locofy hand-off, and the Dynatrace-powered LingoScope dashboard cut copy-and-code cycles and give real-time visibility into latency, token use, and accuracy.
+
+Finally, Strategic Partnerships—six so far—embed these patterns with Consumer Product, Provider D&A, Sales, and others, linking AI roll-outs to measurable gains in broker experience and NPS.
