@@ -1,0 +1,172 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Lingo Observability – L1 (Rev D2, Unique IDs)" id="0">
+    <mxGraphModel dx="1365" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="10000" value="Lingo Observability – High‑Level Architecture (Rev D2)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#111827" parent="1" vertex="1">
+          <mxGeometry x="30" y="10" width="760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="11000" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E5E7EB;" parent="1" vertex="1">
+          <mxGeometry x="20" y="40" width="1280" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="21000" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#E5E7EB;" parent="11000" vertex="1">
+          <mxGeometry x="30" y="60" width="290" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="21100" value="Ingestion" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#374151" parent="11000" vertex="1">
+          <mxGeometry x="30" y="62" width="290" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="22000" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#E5E7EB;" parent="11000" vertex="1">
+          <mxGeometry x="330" y="60" width="290" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="22100" value="Processing &amp; Enrichment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#374151" parent="11000" vertex="1">
+          <mxGeometry x="330" y="62" width="290" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="23000" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#E5E7EB;" parent="11000" vertex="1">
+          <mxGeometry x="630" y="60" width="290" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="23100" value="Storage &amp; Analytics" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#374151" parent="11000" vertex="1">
+          <mxGeometry x="630" y="62" width="290" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="24000" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#E5E7EB;" parent="11000" vertex="1">
+          <mxGeometry x="930" y="60" width="290" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="24100" value="Output &amp; Integrations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#374151" parent="11000" vertex="1">
+          <mxGeometry x="930" y="62" width="290" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="30010" value="Event Ingestion Gateway&#xa;(HTTP/gRPC, batch, stream)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#D1D5DB;fillColor=#F3F4F6;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="50" y="110" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="30020" value="Agent/Tool Emitters&#xa;(traces, logs, metrics, feedback)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#CBD5E1;fillColor=#ECEFF3;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="50" y="210" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="30030" value="Security Tap&#xa;(PII/PHI redaction, allowlists)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#F2B3AA;fillColor=#FDE7E5;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="50" y="310" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="40010" value="Distributed Trace Collector&#xa;(OpenTelemetry)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="350" y="110" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="40020" value="Log Aggregator&#xa;(structured JSON, sampling)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="350" y="210" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="40030" value="Metrics Collector&#xa;(latency, tokens, CPU/NET)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="350" y="310" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="40040" value="Feedback Service&#xa;(user ratings, corrections)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="350" y="410" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="40050" value="Policy Monitor&#xa;(ABAC scope, tool access)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#F2B3AA;fillColor=#FDE7E5;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="350" y="510" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="50010" value="Observability Lake&#xa;(append‑only, partitioned)" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;strokeColor=#F2C48C;fillColor=#FFF1DA;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="650" y="110" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="50020" value="Hot Store / Indexes&#xa;(timeseries + search)" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;strokeColor=#F2C48C;fillColor=#FFF1DA;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="650" y="230" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="50030" value="Analytics Engine&#xa;(enrichment, joins, SLOs)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="650" y="350" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="50040" value="Model Eval Jobs&#xa;(accuracy, regression tests)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="650" y="440" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="50050" value="Access Control&#xa;(row/field masking)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#F2B3AA;fillColor=#FDE7E5;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="650" y="530" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="60010" value="Dashboards &amp; Explorer&#xa;(LingoScope, Dynatrace)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#CBD5E1;fillColor=#ECEFF3;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="950" y="110" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="60020" value="Alerts &amp; Paging&#xa;(SLOs, anomalies)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="950" y="220" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="60030" value="Audit &amp; Reports&#xa;(immutable export)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="11000" vertex="1">
+          <mxGeometry x="950" y="310" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="60040" value="Ticketing / SIEM / BI&#xa;(Jira, Splunk, PowerBI)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#D1D5DB;fillColor=#F3F4F6;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="950" y="400" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="60050" value="Data Sharing API&#xa;(secure, scoped)" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#D1D5DB;fillColor=#F3F4F6;fontColor=#111827;" parent="11000" vertex="1">
+          <mxGeometry x="950" y="490" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="70000" value="trace envelopes" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="30010" target="40010" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70001" value="structured logs" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="30020" target="40020" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70002" value="metrics" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="30020" target="40030" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70003" value="feedback" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="30020" target="40040" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70004" value="policy events" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="30030" target="40050" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70005" value="traces" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="40010" target="50010" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70006" value="logs" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="40020" target="50010" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70007" value="timeseries" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="40030" target="50020" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70008" value="feedback index" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="40040" target="50020" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70009" value="violations" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="40050" target="50050" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70010" value="batch read" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50010" target="50030" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70011" value="realtime read" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50020" target="50030" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70012" value="eval datasets" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50030" target="50040" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70013" value="dash queries" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50020" target="60010" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70014" value="computed KPIs" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50030" target="60010" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70015" value="alerts" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50040" target="60020" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70016" value="audit export" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="50010" target="60030" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70017" value="incidents" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="60020" target="60040" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70018" value="reports" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="60030" target="60040" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70019" value="share views" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#333333;strokeWidth=1.5;fontSize=11;" parent="1" source="60010" target="60050" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="80000" value="Legend" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#111827" parent="1" vertex="1">
+          <mxGeometry x="20" y="610" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="80010" value="UI / Visualization" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#CBD5E1;fillColor=#ECEFF3;fontColor=#111827;" parent="1" vertex="1">
+          <mxGeometry x="20" y="640" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="80020" value="Processing / Service" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#BBD3EA;fillColor=#E8F1FB;fontColor=#0F172A;" parent="1" vertex="1">
+          <mxGeometry x="230" y="640" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="80030" value="Data Store" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;strokeColor=#F2C48C;fillColor=#FFF1DA;fontColor=#111827;" parent="1" vertex="1">
+          <mxGeometry x="440" y="640" width="200" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="80040" value="Security / Policy" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#F2B3AA;fillColor=#FDE7E5;fontColor=#111827;" parent="1" vertex="1">
+          <mxGeometry x="650" y="640" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="80050" value="Infrastructure / Integrations" style="rounded=6;whiteSpace=wrap;html=1;strokeColor=#D1D5DB;fillColor=#F3F4F6;fontColor=#111827;" parent="1" vertex="1">
+          <mxGeometry x="860" y="640" width="250" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
