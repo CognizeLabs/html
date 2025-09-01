@@ -1,62 +1,128 @@
-1. Sustained Technical Contributions and Influence
+# =========================
+# 7) Evaluation on Validation Set (no rouge-score import)
+# =========================
 
-Technical Innovation and Impact
+import pandas as pd
+from IPython.display import display
 
-Eligibility Verification System: Genoj designed and led the development of a comprehensive eligibility verification system that digitized manual PDF uploads and integrated seamlessly with the broker community. This project not only streamlined form submissions but also expedited case evaluations, leading to an annual cost saving of approximately $20 million. Genoj’s leadership in this initiative demonstrated his technical prowess and commitment to solving complex problems, significantly improving operational efficiency.
+# ---- Pure-Python ROUGE-L F1 (token-level LCS) ----
+def rougeL_f1(a: str, b: str) -> float:
+    """Compute a lightweight ROUGE-L F1 using token-level longest common subsequence."""
+    xa, xb = a.lower().split(), b.lower().split()
+    m, n = len(xa), len(xb)
+    if m == 0 or n == 0:
+        return 0.0
+    # LCS DP
+    dp = [[0]*(n+1) for _ in range(m+1)]
+    for i in range(1, m+1):
+        ai = xa[i-1]
+        for j in range(1, n+1):
+            if ai == xb[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = dp[i-1][j] if dp[i-1][j] >= dp[i][j-1] else dp[i][j-1]
+    L = dp[m][n]
+    p = L / float(n)
+    r = L / float(m)
+    return (2*p*r) / (p + r + 1e-12)
 
-Email Automation Project: Genoj spearheaded the development of an advanced email automation solution that classifies customer support emails, identifies intent, extracts details, and processes backend transactions. With the project now in production and saving around $7 million annually, his innovative approach in automating email processing has transformed how the organization handles customer interactions, showcasing his ability to drive impactful technological solutions.
+def precision_recall_at_k(ref_text, retrieved_texts, k, thresh=0.50):
+    """
+    Count a retrieved doc as relevant if rougeL_f1(ref_context, doc) >= `thresh`.
+    Returns (precision@k, recall@k). We treat the reference context as a single gold.
+    """
+    rel = 0
+    for t in retrieved_texts[:k]:
+        if rougeL_f1(ref_text, t) >= thresh:
+            rel += 1
+    precision = rel / max(len(retrieved_texts[:k]), 1)
+    recall = rel / 1.0
+    return precision, recall
 
-Magnus AI Platform: Under Genoj’s leadership, the Magnus AI Platform was developed to support generative application development, including RAG, knowledge graph, and autonomous agents. This platform facilitates seamless integration and provides robust security, authentication, and configuration capabilities. Genoj’s strategic vision and technical expertise in creating this platform have set a new standard for generative AI applications within the enterprise.
+def evaluate_validation(df_val, strategy="hybrid", overlap_halluc_thresh=0.10, progress_every=5):
+    """
+    Runs retrieval+generation over the validation set and computes:
+      - precision@k, recall@k  (retriever quality proxy)
+      - rougeL_answer_vs_ref   (answer relevance)
+      - context_overlap        (answer vs retrieved text)
+      - hallucination_flag     (low overlap => True)
+    Requires globals: retrieve_docs, generate_answer, get_llm, RETRIEVAL_K
+    """
+    print(f"[evaluate_validation] strategy={strategy}", flush=True)
 
-Developer Frameworks and Reusable Components
+    if df_val is None or df_val.empty:
+        print("⚠️ No validation rows; returning None.", flush=True)
+        return None
 
-Framework Development: Genoj developed several frameworks that streamline development processes for the organization. These frameworks include reusable components and guidelines that enhance efficiency and consistency in application development. By creating these resources, Genoj has empowered development teams to accelerate project timelines and improve the quality of deliverables, demonstrating his commitment to fostering a culture of innovation and excellence.
-Security and Privacy Enhancements
+    # sanity check required globals
+    missing = [name for name in ("retrieve_docs", "generate_answer", "get_llm", "RETRIEVAL_K") if name not in globals()]
+    if missing:
+        raise RuntimeError(f"Missing required globals: {missing}. Run earlier cells to define them.")
 
-Virus Scanning Service: Genoj designed a reusable virus scanning service utilizing open-source engines, which provides API-based file scanning to enhance security and eliminate malware threats. This service has fortified the organization’s cybersecurity measures and reflects Genoj’s dedication to ensuring robust and reliable security solutions.
+    llm = get_llm()
+    rows = []
+    total = len(df_val)
 
-Generative Application Libraries: Genoj developed libraries to prevent prompt injection and redact sensitive data, ensuring privacy and security in healthcare applications. His work in this area has enhanced the security and compliance of generative applications, addressing critical concerns in data protection and privacy.
+    for i, row in enumerate(df_val.itertuples(index=False), start=1):
+        q = str(getattr(row, "question"))
+        ref_ctx = str(getattr(row, "reference_context"))
+        ref_ans = str(getattr(row, "reference_answer"))
 
-Technical Thought Leadership
+        # Retrieval
+        docs = retrieve_docs(q, strategy=strategy)
+        texts = [getattr(d, "page_content", str(d)) for d in docs]
 
-Blog Contributions and Public Engagement: Genoj is an active contributor to technical blogs on Medium and GitHub, where he shares insights on reusable components and generative application development. His public engagement helps to disseminate knowledge and best practices, positioning him as a thought leader in the field of technology.
+        # Generation (uncertainty handling)
+        if texts:
+            gen = generate_answer(q, docs, llm=llm)
+        else:
+            gen = "The question cannot be answered using the available documents."
 
-Architecture Review Board: Genoj conducts solution architecture review board calls, collaborating with teams across the organization, including Cirrus, Nimbus, and various business units. His role in these reviews highlights his influence and expertise in shaping the technical direction and ensuring the alignment of IT solutions with business objectives.
+        # Metrics
+        p, r = precision_recall_at_k(ref_ctx, texts, k=RETRIEVAL_K)
+        rougeL = rougeL_f1(ref_ans, gen)
+        ctx_overlap = rougeL_f1(" ".join(texts), gen) if texts else 0.0
+        hallucinated = ctx_overlap < overlap_halluc_thresh
 
-Awards and Recognition
+        rows.append({
+            "question": q,
+            "precision@k": p,
+            "recall@k": r,
+            "rougeL_answer_vs_ref": rougeL,
+            "context_overlap": ctx_overlap,
+            "hallucination_flag": hallucinated,
+            "n_ctx": len(texts),
+        })
 
-"Make it Happen" IT Award: Genoj has been honored with the "Make it Happen" IT award twice, recognizing his exceptional contributions and impactful results in IT projects. This repeated acknowledgment underscores his sustained excellence and influence within the organization.
-Conclusion
+        if progress_every and i % progress_every == 0:
+            print(f"  processed {i}/{total}", flush=True)
 
-Genoj Mathew’s career is marked by a series of significant technical contributions and leadership accomplishments. His ability to drive innovation, enhance security, develop reusable frameworks, and influence organizational practices demonstrates his suitability for the Distinguished Engineer role. His sustained technical contributions and positive outcomes have made a lasting impact on the organization, validating his nomination for this prestigious recognition.
-=========
-1. Demonstrating Thought Leadership
+    out = pd.DataFrame(rows)
+    print(f"[evaluate_validation] done: {out.shape[0]} rows", flush=True)
+    return out
 
-Innovative Solutions and Strategic Vision
+def run_validation_benchmark(df_val):
+    """Convenience helper to run both strategies and show summaries."""
+    print("=== Running semantic ===", flush=True)
+    report_sem = evaluate_validation(df_val, strategy="semantic")
+    print("=== Running hybrid ===", flush=True)
+    report_hyb = evaluate_validation(df_val, strategy="hybrid")
 
-Magnus AI Platform: Genoj Mathew has been instrumental in leading the development of the Magnus AI Platform, which supports cutting-edge technologies such as Retrieval-Augmented Generation (RAG), knowledge graphs, and autonomous agents. His vision in creating this platform has set a new benchmark for generative AI applications within the organization. The platform’s capabilities in security, authentication, and seamless integration highlight Genoj’s ability to anticipate industry trends and deliver forward-thinking solutions that address both current and future needs.
+    def _show(df, name):
+        print(f"\n--- {name} ---", flush=True)
+        if df is None:
+            print("None (likely missing validation file)."); return
+        if getattr(df, "empty", True):
+            print("Empty DataFrame (0 rows)"); display(df); return
+        print("shape:", df.shape)
+        display(df.head(10))
+        print("describe():")
+        display(df.describe(include="all"))
+        # quick means
+        numeric_cols = ["precision@k","recall@k","rougeL_answer_vs_ref","context_overlap"]
+        means = {c: float(df[c].mean()) for c in numeric_cols if c in df.columns}
+        print("means:", means)
 
-Eligibility Verification System: Genoj’s leadership in designing and implementing the eligibility verification system demonstrated his strategic foresight and technical acumen. By digitizing manual processes and integrating with the broker community, he not only improved operational efficiency but also influenced the way eligibility verification is approached within the industry. This initiative reflects his ability to think beyond conventional solutions and drive meaningful change.
-
-Development of Developer Frameworks
-
-Framework and Reusable Components: Genoj developed frameworks and reusable components that have streamlined development processes across the organization. His creation of these tools underscores his commitment to enhancing the efficiency and consistency of application development. By providing these resources, Genoj has empowered development teams and set a standard for best practices within the organization, showcasing his thought leadership in promoting innovation and operational excellence.
-Advancing Security and Privacy
-
-Virus Scanning Service: The virus scanning service designed by Genoj, which utilizes open-source engines for API-based file scanning, represents a significant advancement in cybersecurity within the organization. His approach to integrating security measures into development processes reflects his proactive stance on protecting organizational assets and addressing emerging threats.
-
-Generative Application Libraries: Genoj’s development of libraries to prevent prompt injection and redact sensitive data demonstrates his leadership in addressing critical concerns related to data privacy and application security. His work in this area has contributed to setting industry standards for secure generative applications, reflecting his expertise and influence in the field.
-
-Public Engagement and Knowledge Sharing
-
-Technical Blogging and GitHub Contributions: Genoj actively contributes to technical blogs on Medium and maintains a GitHub account where he shares insights on reusable components and generative application development. His public engagement in these platforms helps disseminate knowledge and best practices, reinforcing his role as a thought leader and influencing the broader tech community.
-
-Architecture Review Board: Genoj’s role in conducting solution architecture review board calls, where he collaborates with teams across the organization, highlights his influence in shaping technical strategies and ensuring alignment with business objectives. His participation in these reviews underscores his thought leadership in guiding the organization’s technological direction.
-
-Awards and Recognition
-
-"Make it Happen" IT Award: Genoj’s receipt of the "Make it Happen" IT award twice further validates his thought leadership and impact within the organization. These awards recognize his exceptional contributions and innovative solutions, reinforcing his status as a leader in the field.
-Conclusion
-
-Genoj Mathew’s career is marked by a series of initiatives and contributions that exemplify thought leadership. His innovative solutions, development of frameworks, advancements in security and privacy, public engagement, and recognition through awards all demonstrate his ability to influence and shape the technological landscape. His work has not only driven significant improvements within the organization but also set a precedent for best practices and industry standards, making him a deserving candidate for the Distinguished Engineer title.
-===================
+    _show(report_sem, "SEMANTIC")
+    _show(report_hyb, "HYBRID")
+    return report_sem, report_hyb
