@@ -1,0 +1,643 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\froman\fcharset0 Times-Bold;
+\f3\froman\fcharset0 Times-Italic;\f4\froman\fcharset0 Times-Roman;\f5\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red130\green53\blue188;\red255\green255\blue254;\red0\green0\blue0;
+\red83\green133\blue132;\red143\green16\blue118;\red153\green115\blue4;\red16\green121\blue2;\red109\green109\blue109;
+}
+{\*\expandedcolortbl;;\cssrgb\c58824\c31373\c78431;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;
+\cssrgb\c39216\c58824\c58824;\cssrgb\c63529\c15686\c53725;\cssrgb\c66667\c52157\c0;\cssrgb\c0\c53333\c0;\cssrgb\c50196\c50196\c50196;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid301\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 sequenceDiagram
+\f1\b0 \cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf5 \strokec5 autonumber\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Dev\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Dev\cf0 \strokec4 -\cf6 \strokec6 ADK\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Vault\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Key\cf0 \strokec4  \cf6 \strokec6 Vault\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Reg\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Enterprise\cf0 \strokec4  \cf6 \strokec6 Agent\cf0 \strokec4  \cf6 \strokec6 Registry\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Mp\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Marketplace\cf0 \strokec4  \cb1 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Gate\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 U\cf0 \strokec4 -\cf6 \strokec6 ACP\cf0 \strokec4  \cf6 \strokec6 Gateway\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 RT\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Security\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Caller\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 CallingAgent\cf0 \strokec4  (\cf6 \strokec6 ADK\cf0 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Target\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 TargetAgent\cf0 \strokec4  (\cf6 \strokec6 ADK\cf0 \strokec4 )\cb1 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Tool\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Tool\cf0 \strokec4  \cf6 \strokec6 Service\cf0 \cb1 \strokec4 \
+\cb3   \cf5 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 Scope\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 LingoScope\cf0 \cb1 \strokec4 \
+\
+\cb3   
+\f0\b \cf2 \strokec2 rect
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 rgb\cf0 \strokec4 (240,240,255)\cb1 \
+\cb3     \cf5 \strokec5 Note\cf0 \strokec4  \cf5 \strokec5 over\cf0 \strokec4  \cf6 \strokec6 Dev\cf0 \strokec4 ,\cf6 \strokec6 Vault
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Provisioning / Onboarding\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Dev
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Vault
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Create RSA keypair\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Dev
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Dev
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Host JWKS (jwks_url)\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Dev
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Reg
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  POST /onboard \{manifest, jwks_url, scopes, capabilities, marketplace_metadata\}\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Reg
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Mp
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Create draft listing\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Mp
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Reg
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Listing pending approval\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Reg
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Reg
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Controls checks (telemetry probe, policy, SBOM)\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Mp
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Reg
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Listing approved (listing_id)\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Reg
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Gate
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Register route/allow-list (agent_id, jwk_thumbprint, scopes, audience)\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Reg
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Dev
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  201 \{agent_id, registry_id, listing_id\}\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Dev
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Scope
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Telemetry probe (schema v1)\cf0 \cb1 \strokec4 \
+\cb3   
+\f0\b \cf2 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\
+\cb3   
+\f0\b \cf2 \strokec2 rect
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 rgb\cf0 \strokec4 (240,255,240)\cb1 \
+\cb3     \cf5 \strokec5 Note\cf0 \strokec4  \cf5 \strokec5 over\cf0 \strokec4  \cf6 \strokec6 Caller\cf0 \strokec4 ,\cf6 \strokec6 Target
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Runtime Invocation\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Caller
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Caller
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Get OAuth2 client-credential token (aud=uacp, scope=capability)\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Caller
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Gate
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  JSON-RPC \{jwt, nonce, scope, capability_id, listing_id\}\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Gate
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Gate
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Verify JWT, nonce, scope, allow-list, listing active/quota\cf0 \cb1 \strokec4 \
+\cb3     
+\f0\b \cf2 \strokec2 alt
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Text\cf0 \strokec4  \cf6 \strokec6 present\cf0 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 Gate
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 RT
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Inbound guard (prompt-injection/adversarial)\cf0 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 RT
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Gate
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  verdict (allow/sanitize/deny)\cf0 \cb1 \strokec4 \
+\cb3     
+\f0\b \cf2 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Gate
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Target
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  MCP/A2A forward with ADK context\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Target
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Target
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  RBAC + ABAC with user profile/entities\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Target
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Tool
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Call internal service (bearer token)\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Tool
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Target
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Result\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Target
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Target
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Compliance Agent + LLM Judge on outbound\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Target
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Gate
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Response + telemetry\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Gate
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Caller
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Relay response\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Gate
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 Mp
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Usage record (listing_id, metering)\cf0 \cb1 \strokec4 \
+\cb3     
+\f0\b \cf2 \strokec2 par
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Telemetry\cf0 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 Caller
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Scope
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  OTel spans/events\cf0 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 Target
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Scope
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  OTel spans/events\cf0 \cb1 \strokec4 \
+\cb3       \cf6 \strokec6 Gate
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 Scope
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  OTel spans/events\cf0 \cb1 \strokec4 \
+\cb3     
+\f0\b \cf2 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\cb3   
+\f0\b \cf2 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\
+=================================\
+Diagram-1\
+=========\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf2 \cb3 \strokec2 flowchart
+\f1\b0 \cf0 \strokec4  \cf5 \strokec5 LR\cf0 \cb1 \strokec4 \
+
+\f0\b \cf2 \cb3 \strokec2 subgraph
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Experience\cf7 \strokec7 [Experience & Channels]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Web\cf7 \strokec7 [Web/Portal]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Chat\cf7 \strokec7 [Chat/Assistant]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 API\cf7 \strokec7 [APIs]\cf0 \cb1 \strokec4 \
+
+\f0\b \cf2 \cb3 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\
+
+\f0\b \cf2 \cb3 \strokec2 subgraph
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf7 \strokec7 [Agent Runtime]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Plan\cf7 \strokec7 [Planner]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Mem\cf7 \strokec7 [Memory]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Guard\cf7 \strokec7 [Guardrails/Policy]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Obs\cf7 \strokec7 [Observability/Tracing]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Orchestrator\cf7 \strokec7 [Tool Orchestrator]\cf0 \cb1 \strokec4 \
+
+\f0\b \cf2 \cb3 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\
+
+\f0\b \cf2 \cb3 \strokec2 subgraph
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Tools\cf7 \strokec7 [Tooling Mesh]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 RAG\cf7 \strokec7 ["Retrieval Service<br>(Vector + FTS + Graph)"]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Predict\cf7 \strokec7 ["Predictive Engine<br>(RFM-style)"]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Biz\cf7 \strokec7 ["Business APIs<br>(CRM/ERP/Claims)"]\cf0 \cb1 \strokec4 \
+
+\f0\b \cf2 \cb3 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\
+
+\f0\b \cf2 \cb3 \strokec2 subgraph
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Data\cf7 \strokec7 [Data Plane]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Raw\cf7 \strokec7 ["Object Store<br>(raw docs/media)"]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 ETL\cf7 \strokec7 ["Multimodal Ingestion/ETL"]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Vec\cf7 \strokec7 ["Vector Index"]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Graph\cf7 \strokec7 [(Knowledge Graph)]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 SQL\cf7 \strokec7 [(Warehouse/SQL)]\cf0 \cb1 \strokec4 \
+
+\f0\b \cf2 \cb3 \strokec2 end
+\f1\b0 \cf0 \cb1 \strokec4 \
+\
+\cf6 \cb3 \strokec6 Experience\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Runtime\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Orchestrator\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Orchestrator\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 RAG\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Orchestrator\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Predict\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Orchestrator\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Biz\cf0 \cb1 \strokec4 \
+\
+\cf6 \cb3 \strokec6 ETL\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Vec\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 ETL\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Graph\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 ETL\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 SQL\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Raw\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 ETL\cf0 \cb1 \strokec4 \
+\
+\cf6 \cb3 \strokec6 RAG\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Predict\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Biz\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf0 \cb1 \strokec4 \
+\
+\cf6 \cb3 \strokec6 Guard\cf0 \strokec4  
+\f0\b \cf8 \strokec8 <-->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Orchestrator\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Obs\cf0 \strokec4  
+\f0\b \cf8 \strokec8 <-->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Mem\cf0 \strokec4  
+\f0\b \cf8 \strokec8 <-->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Runtime\cf0 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Diagram-2\
+=========\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf2 \cb3 \strokec2 flowchart
+\f1\b0 \cf0 \strokec4  \cf5 \strokec5 TB\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 Q\cf7 \strokec7 [User Question]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 R\cf7 \strokec7 [Router]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 V\cf7 \strokec7 [Vector Retrieval Embeddings FTS]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 G\cf7 \strokec7 [Text2Cypher Graph Query Multi-hop Counting Constraints]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 H\cf7 \strokec7 [Hybrid Merge Rerank]\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 S\cf7 \strokec7 [LLM Synthesizer Citations Graph Paths]\cf0 \cb1 \strokec4 \
+\
+\cb3     \cf6 \strokec6 Q\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 R\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 R\cf0 \strokec4  
+\f0\b \cf8 \strokec8 --
+\f1\b0 \cf7 \strokec7  simple lookup 
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 V\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 R\cf0 \strokec4  -- \cf6 \strokec6 multi\cf0 \strokec4 -\cf6 \strokec6 hop\cf0 \strokec4  / \cf6 \strokec6 entity\cf0 \strokec4  / \cf6 \strokec6 count\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 G\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 R\cf0 \strokec4  
+\f0\b \cf8 \strokec8 --
+\f1\b0 \cf7 \strokec7  uncertain 
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 H\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 V\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 H\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 G\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 H\cf0 \cb1 \strokec4 \
+\cb3     \cf6 \strokec6 H\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 S\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Diagram-3\
+=========\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf2 \cb3 \strokec2 flowchart
+\f1\b0 \cf0 \strokec4  \cf5 \strokec5 LR\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Files\cf7 \strokec7 [Docs/PDFs/CSVs/Images/Audio/Video]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Decode\cf7 \strokec7 [Decode & OCR]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Clean\cf7 \strokec7 [Normalize & Chunk]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 NER\cf7 \strokec7 [Entity/Relation Extract]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Embed\cf7 \strokec7 [Embeddings]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Tables\cf7 \strokec7 [Schema Detect/Type]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Lineage\cf7 \strokec7 [Lineage & Hashes]\cf0 \cb1 \strokec4 \
+\
+\
+\cf6 \cb3 \strokec6 Files\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Decode\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Clean\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Clean\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Embed\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 VecIndex\cf7 \strokec7 [Vector Index]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Clean\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 NER\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 KG\cf7 \strokec7 [(Knowledge Graph)]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Clean\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Tables\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 SQL\cf7 \strokec7 [(Warehouse)]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Clean\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Previews\cf7 \strokec7 [Thumbnails/Previews]\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Lineage\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 VecIndex\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Lineage\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 KG\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Lineage\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 SQL\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 Lineage\cf0 \strokec4  
+\f0\b \cf8 \strokec8 -->
+\f1\b0 \cf0 \strokec4  \cf6 \strokec6 Previews\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Diagram-4\
+==========\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf2 \cb3 \strokec2 sequenceDiagram
+\f1\b0 \cf0 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 U\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 User\cf0 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 A\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Agent\cf0 \strokec4  (\cf6 \strokec6 Planner\cf0 \strokec4 )\cb1 \
+\cf5 \cb3 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 RAG\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Retrieval\cf0 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 RFM\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 Predictive\cf0 \strokec4  \cf6 \strokec6 Engine\cf0 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 participant\cf0 \strokec4  \cf6 \strokec6 L\cf0 \strokec4  \cf5 \strokec5 as\cf0 \strokec4  \cf6 \strokec6 LLM\cf0 \strokec4  \cf6 \strokec6 Synthesizer\cf0 \cb1 \strokec4 \
+\
+\
+\cf6 \cb3 \strokec6 U
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 A
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Ask complex business question\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 A
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 RAG
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Fetch context (docs + graph)\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 A
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 RFM
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Get scores (churn/NBA/propensity)\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 A
+\f0\b \cf8 \strokec8 ->>
+\f1\b0 \cf6 \strokec6 L
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Provide evidence + scores\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 L
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 A
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Draft answer + actions\cf0 \cb1 \strokec4 \
+\cf6 \cb3 \strokec6 A
+\f0\b \cf8 \strokec8 -->>
+\f1\b0 \cf6 \strokec6 U
+\f0\b \cf0 \strokec4 :
+\f1\b0 \cf7 \strokec7  Response (with citations & rationale)\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+\
+===bl\
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f2\b\fs48 \cf0 \strokec4 Notes from the AI Trenches \'97 What\'92s Working for the Enterprise\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\i\b0\fs24 \cf0 This write\uc0\u8209 up summarizes what I observed across recent talks, demos, and technical discussions, translated into practical guidance for business and engineering teams. The goal is clarity and actionability.
+\f4\i0 \
+\pard\pardeftab720\partightenfactor0
+\cf9 \strokec9 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f2\b\fs36 \cf0 \strokec4 Executive Brief\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls1\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Agents are becoming production systems
+\f4\b0 , not prototypes: identity, permissions, audit trails, and rollback are now table stakes.\
+\ls1\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Knowledge\uc0\u8209 RAG (graphs + vectors + search)
+\f4\b0  is outperforming vectors alone for relationship, counting, and multi\uc0\u8209 step questions.\
+\ls1\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Relational predictions (RFM\uc0\u8209 style)
+\f4\b0  allow agents to call churn/propensity/fraud scores directly from warehouse/graph context.\
+\ls1\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Multimodal ingestion
+\f4\b0  (documents, tables, images, audio) in a single pipeline creates durable assets for search, graphs, BI, and compliance.\
+\ls1\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Evaluation, safety, and performance
+\f4\b0  are the difference between a demo and a deployable product.\
+\pard\pardeftab720\partightenfactor0
+\cf9 \strokec9 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f2\b\fs36 \cf0 \strokec4 What Changed (and Why It Matters)\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 1) Agent Runtimes with Controls\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0\fs24 \cf0 Modern runtimes handle planning, tool use, memory, identity (OAuth/OIDC), observability, and kill\uc0\u8209 switches. The value is 
+\f2\b operability
+\f4\b0 : we can see what an agent planned, which tools it invoked, under which identity, and we can revoke access instantly if needed.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf0 Implication:
+\f4\b0  Treat agents like microservices: owner, scoped permissions, rate limits, traces, and clear rollback procedures.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f2\b\fs28 \cf0 2) Knowledge\uc0\u8209 RAG Instead of Vectors\u8209 Only\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0\fs24 \cf0 Graphs contribute explicit structure (entities, relationships, constraints). Paired with vector and full\uc0\u8209 text search, we get higher accuracy on multi\u8209 hop and aggregation questions. A lightweight 
+\f2\b router
+\f4\b0  determines whether to query vectors, graph (Text2Cypher), or both.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf0 Implication:
+\f4\b0  Store text as chunks (vector + full\uc0\u8209 text) and facts as triples (graph). Return answers with citations and, where relevant, the graph path used.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f2\b\fs28 \cf0 3) Predictions on Relational Data (RFM\uc0\u8209 Style)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0\fs24 \cf0 Relational foundation models provide zero/low\uc0\u8209 shot predictions over business data: churn, next\u8209 best\u8209 action, fraud risk. Agents can call these scores mid\u8209 flow and justify actions with retrieved evidence.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf0 Implication:
+\f4\b0  Reasoning (LLM) + prediction (RFM\uc0\u8209 style) is a strong, repeatable pattern for outcomes that matter to the business.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f2\b\fs28 \cf0 4) Multimodal Pipelines\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0\fs24 \cf0 A unified ingestion path (decode \uc0\u8594  clean \u8594  OCR \u8594  extract entities/relations \u8594  embed) produces 
+\f2\b one source of truth
+\f4\b0  used by search, graphs, analytics, and audit.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf0 Implication:
+\f4\b0  Build once, reuse broadly; maintain lineage and hashes to preserve trust and reproducibility.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f2\b\fs28 \cf0 5) Evaluation, Safety, and Performance\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0\fs24 \cf0 Internal leaderboards (golden tasks), pre/post guardrails (PII/safety), and serving optimizations (speculative decoding, KV caching) are now standard practice.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf0 Implication:
+\f4\b0  We can scale only what we can measure, govern, and afford.\
+\pard\pardeftab720\partightenfactor0
+\cf9 \strokec9 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f2\b\fs36 \cf0 \strokec4 Practical Guidance \'97 Business & Engineering\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Business Leaders\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls2\ilvl0
+\f4\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Prioritize use cases where 
+\f2\b grounded answers and next\uc0\u8209 best actions
+\f4\b0  move KPI needles (conversion, retention, deflection, time\uc0\u8209 to\u8209 resolution).\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Require 
+\f2\b explainability
+\f4\b0 : plans, evidence, and predictions should be visible and auditable.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Fund the 
+\f2\b shared ingestion pipeline
+\f4\b0 ; it amortizes across multiple products and reduces re\uc0\u8209 work.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f2\b\fs28 \cf0 Engineering & Data Teams\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls3\ilvl0
+\f4\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Implement an 
+\f2\b Agent Registry
+\f4\b0 : owners, scopes, tool SBOM, session traces, and revoke flows.\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Stand up 
+\f2\b hybrid retrieval
+\f4\b0 : vector + full\uc0\u8209 text + graph with a simple router and a small set of high\u8209 quality exemplars.\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Expose 
+\f2\b predictions as tools
+\f4\b0  (e.g., 
+\f5\fs26 PredictChurn
+\f4\fs24 , 
+\f5\fs26 NextBestAction
+\f4\fs24 ) with inputs/outputs defined as contracts.\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Add 
+\f2\b observability
+\f4\b0  from day one: latency, correctness signals, safety events, and cost.\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Pursue 
+\f2\b performance wins
+\f4\b0  that let agents take multiple steps without violating SLOs.\
+\pard\pardeftab720\partightenfactor0
+\cf9 \strokec9 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f2\b\fs36 \cf0 \strokec4 Patterns to Adopt (Low Friction)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Hybrid Retrieval Router
+\f4\b0  \'97 Route questions to vectors (simple lookups), graph (multi\uc0\u8209 hop/counting), or both; start with 20\'9630 curated examples.\
+\ls4\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Multi\uc0\u8209 Role File Injection
+\f4\b0  \'97 Tag content by role/domain (policy, broker, member, legal) and prefer role\uc0\u8209 aligned context at query time to reduce hallucinations.\
+\ls4\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Predictions as a First\uc0\u8209 Class Tool
+\f4\b0  \'97 Publish churn/NBA/fraud endpoints the agent can call; return scores with confidence and rationale.\
+\ls4\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Traceable Runs
+\f4\b0  \'97 Persist plan \uc0\u8594  tools \u8594  inputs/outputs \u8594  final answer (with redactions). Enable replay and policy updates without guesswork.\
+\ls4\ilvl0
+\f2\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Serving Optimizations
+\f4\b0  \'97 Apply speculative decoding and KV cache reuse where self\uc0\u8209 hosted to reduce p95 latency and cost.\
+\pard\pardeftab720\partightenfactor0
+\cf9 \strokec9 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f2\b\fs36 \cf0 \strokec4 FAQs\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs24 \cf0 Do we need a whole new stack?
+\f4\b0 \uc0\u8232 No. Add a graph database alongside your vector index, build the router, and wrap existing services as tools with scoped identities.\
+
+\f2\b Is this only for developers?
+\f4\b0 \uc0\u8232 No. Product and operations get grounded answers with sources; sales and care get clearer next\u8209 best actions; compliance gets better logs.\
+
+\f2\b How difficult is the relational prediction piece?
+\f4\b0 \uc0\u8232 Harder than a quick script, easier than six bespoke models. Start with a single prediction (e.g., churn). If ROI is clear, extend to NBA or fraud.\
+
+\f2\b Are we locked to any single vendor?
+\f4\b0 \uc0\u8232 Design the interfaces first (router, tools, registry). Vendors can be swapped behind these contracts.\
+\pard\pardeftab720\partightenfactor0
+\cf9 \strokec9 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f2\b\fs36 \cf0 \strokec4 Closing\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0\fs24 \cf0 The consistent pattern across sessions was not a new model; it was 
+\f2\b operational maturity
+\f4\b0 : agents that can be observed, governed, and rolled back. Combined with Knowledge\uc0\u8209 RAG and accessible predictions, that maturity turns impressive demos into dependable products. This is where we should invest.\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \strokec4 \
+}
