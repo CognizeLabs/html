@@ -1,0 +1,12 @@
+I have been working closely with KK throughout 2025 as part of the Lingo Core and OptumAI collaboration. KK played a pivotal role in bridging multiple enterprise groups — including OptumTechnology, OptumRx, Consumer Engineering, and Data Analytics — to align priorities around enterprise-grade AI capabilities. Our collaboration spanned strategic planning, technical specification reviews, and implementation discussions for shared frameworks such as the MCP (Model Context Protocol), Agent Registry, and LLM Gateway.
+
+KK’s grounded leadership style and his ability to bring clarity across complex technical and organizational layers have been instrumental in driving consistency and shared understanding. He proactively engaged with our Lingo Core team to ensure interoperability, governance alignment, and scalability of our agent-based architecture. His openness to feedback and collaborative engagement made cross-enterprise interactions productive and outcomes-focused.
+
+
+
+
+KK has been a key enabler in advancing the Agile ADK (Agent Development Kit) strategy for enterprise AI adoption. He successfully aligned teams across business units to define common standards and reusable frameworks, ensuring that the enterprise AI ecosystem — including Lingo, MCP Gateway, and Agent Registry — evolved cohesively under a unified vision.
+
+In particular, his leadership in coordinating the migration of Lingo AI to United AI Studio (UAS) and Microsoft Azure Cloud has been commendable. KK’s ability to navigate enterprise governance, facilitate collaboration between engineering and platform teams, and maintain momentum despite complex dependencies significantly accelerated our cloud-readiness and enterprise enablement goals.
+
+His foresight, technical acumen, and balanced approach to stakeholder management have been critical to making this large-scale transition both strategic and sustainable. KK’s efforts have laid a strong foundation for future scalability, observability, and innovation across enterprise AI platforms.
