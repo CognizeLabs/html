@@ -1,0 +1,13 @@
+Serves as the primary on-site liaison between the U.S. business stakeholders and the offshore technology R&D team in India, ensuring seamless coordination across time zones and functions.
+
+Provides strategic leadership in defining, refining, and implementing technical requirements for the Lingo AI Platform and related foundational components (LingoScope Observability, Agent Registry, MCP Gateway).
+
+Actively collaborates with OptumAI enterprise teams to standardize agent interoperability (MCP and Agent MetaCard specifications) — key to scaling enterprise-grade AI capabilities across business units.
+
+Leads multiple workstreams focusing on Broker and Employer Experience Transformation, integrating AI-driven workflows that impact customer service, operations, and plan recommendation capabilities.
+
+Manages continuous delivery and innovation cycles between India and U.S. teams, ensuring that design intent, compliance, and performance goals are consistently met.
+
+Demonstrates exceptional cross-functional collaboration, technical depth, and people leadership — indispensable for ensuring on-site alignment, governance, and enterprise adoption.
+
+His ongoing presence in the U.S. is critical for sustaining Lingo AI’s roadmap, ensuring cross-enterprise integration and operational continuity between global development teams.
