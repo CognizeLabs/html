@@ -1,0 +1,80 @@
+graph TD
+%% Sources
+S1["Portal/Symex/VRMS Streams"] --> EH["Azure Event Hubs\n+ Schema Registry"]
+S2["Relational & CDC Sources"] --> ADF["ADF/Synapse Pipelines"]
+S3["External Reports\n(PDF/CSV from vendors)"] --> ADF
+
+%% Lakehouse
+EH --> BR[("ADLS Gen2\nBronze - Iceberg")]
+ADF --> BR
+BR --> SP["Databricks/Synapse Spark\nETL • PII • Quality • Compaction"]
+SP --> SV[("ADLS Gen2\nSilver - Iceberg")]
+SV --> GD[("ADLS Gen2\nGold - Iceberg")]
+
+%% BI
+SV --> SF["Snowflake on Azure\n(External/Iceberg Tables)"]
+GD --> SF --> BI["Power BI"]
+
+%% Document Intelligence & AI
+S3 --> DI["Azure AI Document Intelligence\n(OCR • layout • tables)"]
+DI --> DC["Doc Chunks + Tables\n(JSON/Parquet in Silver)"]
+SV --> EMB["Embedding Job\n(chunk→embed)"]
+DC --> EMB
+EMB --> VEC["(Azure Postgres + pgvector)\nor Azure AI Search"]
+
+SV --> KGB["KG Builder (NER/Rules/LLM)"]
+DC --> KGB --> KG["(Neo4j AuraDB on Azure)"]
+
+%% Governance/Security
+SV -."catalog/lineage".-> PV["Microsoft Purview"]
+SF -."metadata".-> PV
+BR -."lineage".-> PV
+GD -."lineage".-> PV
+KV["Key Vault + Managed Identity + Private Endpoints"] -."protects".-> BR
+KV -."protects".-> SV
+KV -."protects".-> SF
+
+%% Runtime query paths
+RQ["Agentic Orchestrator\n(LangGraph on Azure)"] -->|"hybrid search"| VEC
+RQ -->|"graph traverse"| KG
+RQ -->|"text-to-SQL"| SF
+RQ -->|"citations"| DC
+
+================
+
+graph TD
+subgraph Core_Lakehouse["AI-Ready Data Platform (shared)"]
+  A1[("ADLS Gen2 + Iceberg\nBronze/Silver/Gold")]
+  A2["Azure Databricks / Synapse Spark\nETL & PII handling"]
+  A3[("Azure Postgres + pgvector\nVector Service API")]
+  A4[("Neo4j AuraDB\nKnowledge Graph API")]
+  A5["Snowflake on Azure\nAnalytics Marts"]
+  A6["Microsoft Purview\nCatalog + Lineage"]
+end
+
+subgraph Agents["Domain-Specific Agents (federated)"]
+  B1["Plan / Benefits Agent\nRAG over SBCs"]
+  B2["Reporting Agent\nHybrid (SQL + Vector)"]
+  B3["Compensation Agent\nSQL + KG"]
+  B4["Operations Agent\nDashboards / BI"]
+end
+
+A1-->A2-->A3
+A2-->A4
+A2-->A5
+A1-.metadata.->A6
+A5-.lineage.->A6
+A3-.register.->A6
+A4-.register.->A6
+
+B1-->A3
+B1-->A4
+B2-->A3
+B2-->A5
+B3-->A4
+B3-->A5
+B4-->A5
+
+B1-."evaluation logs".->A6
+B2-.feedback.->A6
+B3-.metrics.->A6
