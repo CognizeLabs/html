@@ -1,0 +1,80 @@
+Create a 6-slide PowerPoint presentation titled:
+"Centralized Data & AI Strategy — Expanding the SDRP Vision."
+
+Audience:
+Enterprise data, analytics, and AI architecture teams across multiple departments.
+Goal:
+Build cross-team alignment and show the market fit for a centralized data and AI platform that extends the Strategic Data Repository Platform (SDRP) beyond analytics into enterprise-wide AI enablement.
+
+Tone and Style:
+- Professional, executive-level.
+- Simple, clean, and visually modern.
+- Light blue (#0078D4) and white theme with subtle gradients.
+- Use Azure-style icons (data lake, AI, cloud, graph, document, shield).
+- Prefer flat, horizontal layouts and thin straight connectors.
+- Avoid dark backgrounds and clutter.
+
+Include these six slides:
+
+1. **Vision & Purpose**
+   - Headline: "From Data Silos to Enterprise Intelligence"
+   - Subtitle: "Expanding the Strategic Data Repository Platform (SDRP)"
+   - Bullets:
+     • SDRP Phase 1 success: QTrack → real-time billing audit.
+     • Opportunity: Expand to unified data + AI ecosystem.
+     • Shared foundation for analytics, reporting, and AI.
+   - Visual: abstract data network or Azure cloud illustration.
+
+2. **Current Challenges**
+   - Headline: "Great Data, Limited Synergy"
+   - Subtitle: "Disconnected teams = duplicated effort and slower insights"
+   - Bullets:
+     • Separate data pipelines across analytics, reporting, and AI.
+     • Multiple data copies and inconsistent governance.
+     • Manual integration delays insight generation.
+   - Visual: 3-column layout (Analytics | Reporting | AI) showing disconnection.
+
+3. **Target Architecture**
+   - Headline: "Unified AI-Enabled Data Platform"
+   - Subtitle: "From Ingestion → Lakehouse → Vector & Knowledge Graph → Consumers"
+   - Bullets:
+     • Azure ADLS Gen2 + Iceberg + Snowflake = shared AI-ready lakehouse.
+     • AI Enrichment Layer adds Vector Store (pgVector / AI Search) + Knowledge Graph (Neo4j Aura).
+     • Governance via Purview, Key Vault, Managed Identity.
+   - Visual: Horizontal architecture diagram with clear tiers:
+     Sources → Ingestion → Lakehouse → AI Enrichment (Vector Store + KG) → Consumers (BI, Agents, Models).
+
+4. **Use Cases & Cross-Team Synergy**
+   - Headline: "How Each Team Wins"
+   - Subtitle: "Shared Lakehouse → Shared Outcomes"
+   - Bullets:
+     • Reporting team feeds documents into AI knowledge base.
+     • Analytics team uses Gold datasets for modeling.
+     • AI team builds RAG and multi-agent systems using Vector + KG.
+   - Visual: Radial chart around a central “Shared Lakehouse” node.
+
+5. **Value Proposition & ROI**
+   - Headline: "Shared Foundation → Enterprise Value"
+   - Subtitle: "Efficiency, Speed, and Trust in Every Insight"
+   - Bullets:
+     • 40–50% reduction in redundant ETL pipelines.
+     • 2–3× faster data-to-decision cycle.
+     • Unified lineage, PHI/PII protection, cost efficiency.
+   - Visual: Comparison chart "Traditional vs Unified" showing performance and compliance gains.
+
+6. **Roadmap & Next Steps**
+   - Headline: "From Platform to Intelligence Ecosystem"
+   - Subtitle: "Three-Phase Journey"
+   - Bullets:
+     • Phase 1 (Complete): SDRP foundation and QTrack success.
+     • Phase 2 (In Progress): AI Enrichment Layer (Vector Store + Knowledge Graph).
+     • Phase 3 (Future): Multi-agent AI ecosystem across enterprise.
+   - Visual: Horizontal timeline or milestone roadmap with icons.
+
+Speaker Notes:
+Add short 2–3 sentence notes per slide describing the narrative:
+Explain SDRP’s current success, the need for unification, how the architecture works, benefits for each team, expected ROI, and roadmap.
+
+Theme:
+Apply Microsoft’s default "Blue Professional" or "Azure Executive" theme if available.
+Use white backgrounds with azure-blue accents, rounded rectangles for callouts, and thin straight connectors for flows.
