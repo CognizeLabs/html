@@ -1,0 +1,61 @@
+Newsletter paragraph (short & sharp)
+
+Right-size your AI. With all the buzz around AI agents and MCP integrations, start by asking: Does this use case truly need autonomy and multi-step orchestration, or will a traditional API/model call meet the need more safely and efficiently? In healthcare settings where reliability, traceability, and consistency matter, avoid over-engineering—and pick the simplest approach that delivers the required outcome. If you do need agents, make sure you build them with clear guardrails and continuous monitoring.
+
+One-page brief: “Agentic AI vs. Straightforward Automation—How to Choose (Healthcare Edition)”
+
+Executive takeaway
+Not every problem warrants an AI agent. Use agents when you need planning across multiple steps and systems; otherwise, prefer deterministic services (APIs, rules, single-shot models) to maximize reliability, traceability, and cost-efficiency.
+
+When an agent is warranted
+
+The task spans multi-step workflows (plan → call tools/APIs → verify → retry).
+
+You need tool orchestration across several systems, with contextual memory between steps.
+
+The environment changes and benefits from adaptive, goal-directed behavior, not just hard-coded paths.
+
+You can enforce strong guardrails including scoped permissions, audit logs, human approval, and monitoring.
+
+When to prefer traditional AI/API
+
+The path to a correct outcome is clear and repeatable, and not dependent on ongoing reasoning.
+
+Reliability and predictability are paramount; you want simple failure modes and easy validation.
+
+A single tool call or rules engine can satisfy the requirement.
+
+You need straightforward documentation and audit trails with minimal complexity.
+
+Quick decision checklist (yes → lean agent; no → lean simple)
+
+Requires planning across multiple steps/tools?
+
+Does autonomy reduce human handoffs measurably?
+
+Can the agent’s permissions and actions be fully constrained?
+
+Do you have monitoring and evaluation to prove reliability?
+
+Are requirements for traceability, human oversight, and maintainability covered?
+
+If you choose agents, add these guardrails
+
+Human-in-the-loop for sensitive or high-impact actions; record rationale and outcomes.
+
+Scoped credentials & least-privilege, with audit trails and revocation paths.
+
+Evaluation frameworks (offline + online) to monitor accuracy, bias, unintended behaviors.
+
+Observability pipeline: logs of prompts, tool calls, decisions, fallbacks; incident playbooks.
+
+Tool-access safety: allow/deny lists, rate limits, rollback mechanisms.
+
+What MCP helps with
+Standardizing how models connect to tools/data via clients/servers—useful when you have many tools or data sources and want consistent, auditable integrations. It reduces bespoke glue code and improves maintainability—but doesn’t replace governance, evaluation, and clarity of purpose.
+
+Healthcare nuance
+In healthcare settings, where auditability, trust, and safety are non-negotiable, simpler solutions often reduce risk. If autonomy is needed, you must carefully document intended use, risk controls, monitoring, and update processes.
+
+Bottom line
+Start with the simplest architecture that meets the business goal; only escalate to agents when autonomy and orchestration clearly deliver added value—and then implement them with rigorous guardrails, monitoring, and clarity of purpose.
