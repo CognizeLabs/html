@@ -1,12 +1,14 @@
-I have been working closely with KK throughout 2025 as part of the Lingo Core and OptumAI collaboration. KK played a pivotal role in bridging multiple enterprise groups — including OptumTechnology, OptumRx, Consumer Engineering, and Data Analytics — to align priorities around enterprise-grade AI capabilities. Our collaboration spanned strategic planning, technical specification reviews, and implementation discussions for shared frameworks such as the MCP (Model Context Protocol), Agent Registry, and LLM Gateway.
-
-KK’s grounded leadership style and his ability to bring clarity across complex technical and organizational layers have been instrumental in driving consistency and shared understanding. He proactively engaged with our Lingo Core team to ensure interoperability, governance alignment, and scalability of our agent-based architecture. His openness to feedback and collaborative engagement made cross-enterprise interactions productive and outcomes-focused.
-
-
-
-
-KK has been a key enabler in advancing the Agile ADK (Agent Development Kit) strategy for enterprise AI adoption. He successfully aligned teams across business units to define common standards and reusable frameworks, ensuring that the enterprise AI ecosystem — including Lingo, MCP Gateway, and Agent Registry — evolved cohesively under a unified vision.
-
-In particular, his leadership in coordinating the migration of Lingo AI to United AI Studio (UAS) and Microsoft Azure Cloud has been commendable. KK’s ability to navigate enterprise governance, facilitate collaboration between engineering and platform teams, and maintain momentum despite complex dependencies significantly accelerated our cloud-readiness and enterprise enablement goals.
-
-His foresight, technical acumen, and balanced approach to stakeholder management have been critical to making this large-scale transition both strategic and sustainable. KK’s efforts have laid a strong foundation for future scalability, observability, and innovation across enterprise AI platforms.
+Who I am / what I lead: AI/ML engineering + solution architecture leader for our Employer & Individual business, partnering closely with business and tech leaders.
+My north star: Scale AI-assisted experiences that measurably improve outcomes—speed, quality, and cost-to-serve—without increasing risk.
+Where I’m spending time now: Turning high-value workflows into reusable, production-grade AI patterns (not one-off pilots).
+Outcome lens: Focus on workflows that move the needle—cycle time reduction, fewer handoffs, call/email deflection, error reduction, better user experience.
+Operating model belief: Smaller, empowered cross-functional pods embedded with business drive faster value than heavy ceremony.
+How to keep speed + control: “Paved roads” (reference architectures, templates, shared components) so teams don’t reinvent governance/security each time.
+Developer productivity: Use Copilot/Codex-type tools to increase throughput, while measuring quality (lead time, PR cycle time, defect escape rate, security findings).
+AI security emphasis: Conversational agents create a new attack surface—prompt injection, tool misuse, data leakage—that won’t show up in demos.
+Testing stance: Domain-driven testing is essential—each domain owns realistic user intents + adversarial prompts + edge cases in CI/CD.
+Red-teaming: We should normalize red-team exercises and continuous evaluation—not just pre-release checks.
+Cross-team collaboration: Enterprise support is helpful, but domains need security champions and shared playbooks to close gaps consistently.
+What “done” looks like: Least-privilege tool access, injection/data-leak tests, evaluation evidence, audit logs, monitoring/observability, rollback/kill-switch plan.
+Question to the CIO: “How do you want teams to partner on AI risk—formal red-team service, or a federated model with domain security champions plus enterprise oversight?”
+What I’d ask leadership to enable: A lightweight, shared AI Security & Evaluation Kit (playbooks, reusable tests, definition-of-done) to standardize safety across teams.
